@@ -5,6 +5,7 @@
 "------------- Hank Television -----------------"
 "----------- Minimal Vim Config ----------------"
 "-----------------------------------------------" 
+
 "---Settings---"
 syntax on
 
@@ -21,19 +22,22 @@ set title
 set novisualbell
 set noerrorbells
 
-"let g:netrw_banner=0		" Hide the directory banner
-let g:netrw_liststyle=3		" 0=thin; 1=long; 2=wide; 3=tree
+" 0=thin; 1=long; 2=wide; 3=tree
+let g:netrw_liststyle=3		
 
-set cursorline			" highlight current line
+" highlight current line
+set cursorline			
 
 "---Remaps---"
 let mapleader=" " 
 
 " save buffer
-nnoremap <leader>sv :w<CR> 
+nnoremap <leader>sv :w<CR>  
 
 " cmd mode
 nnoremap <leader>cm :
+
+" spell check
 nnoremap <leader>spl :set spell spelllang=en_us
 
 " moves highlighted lines up or down around existing lines
@@ -42,13 +46,15 @@ vnoremap K :m'<-2<CR>gv=gv
 
 " netrw
 nnoremap <leader>jr :Ex<CR>
-" split to netrw
-noremap <silent> <leader>vo <C-w>vjr
-noremap <silent> <leader>wo <C-w>sjr
+
+" split to netrw (vert/hoz)
+nnoremap <silent> <leader>vo <C-w>v <C-w>w :Ex<CR>
+nnoremap <silent> <leader>wo <C-w>s <C-w>w :Ex<CR>
 
 " next window / close window
-noremap <silent> <leader>nw <C-w>w 
-noremap <silent> <leader>vc <C-w>wq 
+nnoremap <silent> <leader>nw <C-w>w 
+nnoremap <silent> <leader>vc <C-w>q 
+
 " navigate windows
 nnoremap <silent> <C-h> <C-w>h
 nnoremap <silent> <C-j> <C-w>j
@@ -59,11 +65,6 @@ nnoremap <silent> <C-l> <C-w>l
 if !has('gui_running')
         set t_Co=256
 endif
+
 colorscheme industry
-
-
-
-
-
-
 
