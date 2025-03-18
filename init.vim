@@ -5,6 +5,7 @@
 "------------- Hank Television -----------------"
 "----------- Minimal Vim Config ----------------"
 "-----------------------------------------------" 
+
 "---Settings---"
 syntax on		
 	
@@ -28,17 +29,31 @@ set cindent
 set smartindent
 
 
+<<<<<<< HEAD
 let g:netrw_liststyle=3		"0=thin; 1=long; 2=wide; 3=tree
 
 set cursorline				"highlight current line
+=======
+" 0=thin; 1=long; 2=wide; 3=tree
+let g:netrw_liststyle=3		
+
+" highlight current line
+set cursorline			
 
 "---Remaps---"
 let mapleader=" "
-
 noremap <leader>sv :w<CR>
 
 "cmd mode
 noremap <leader>cm :
+" save buffer
+nnoremap <leader>sv :w<CR>  
+
+" cmd mode
+nnoremap <leader>cm :
+
+" spell check
+nnoremap <leader>spl :set spell spelllang=en_us
 
 "moves highlighted lines up or down around existing lines
 vnoremap J :m'>+1<CR>gv=gv 
@@ -56,6 +71,18 @@ nnoremap <silent> <leader>vc <C-w>wq
 
 "navigate windows
 nnoremap <silent> <C-h> <C-w>h			
+=======
+
+" split to netrw (vert/hoz)
+nnoremap <silent> <leader>vo <C-w>v <C-w>w :Ex<CR>
+nnoremap <silent> <leader>wo <C-w>s <C-w>w :Ex<CR>
+
+" next window / close window
+nnoremap <silent> <leader>nw <C-w>w 
+nnoremap <silent> <leader>vc <C-w>q 
+
+" navigate windows
+nnoremap <silent> <C-h> <C-w>h
 nnoremap <silent> <C-j> <C-w>j
 nnoremap <silent> <C-k> <C-w>k
 nnoremap <silent> <C-l> <C-w>l
@@ -67,6 +94,7 @@ if !has('gui_running')
 endif
 
 "colorscheme elflord
-colorscheme slate
+"colorscheme slate
 "colorscheme koehler
+colorscheme industry
 
